@@ -16,20 +16,30 @@ body {
     color: var(--font-colour);
 
 }
+
+img {
+    margin: 2rem; 
+}
+h4, p {
+    font-size: 1.3rem; 
+    font-weight: 400;
+}
+
+section.card {
+    padding: 20px;
+}
+
 header {
     display: flex;
     align-self: center;
     flex-direction: column;
+    margin-top: 5rem;
 }
 
 .body__title {
     font-family: var(--title-font);
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
-}
-
-.search__area {
-
 }
 
 .search__bar {
@@ -53,7 +63,7 @@ header {
 main{
     display: flex;
     align-content: center;
-    /* flex-direction:  column; */
+    flex-direction:  column;
     /* max-width: vw; */
     /* min-height: 74vh; */
     margin: 0 auto;
@@ -66,6 +76,7 @@ main{
     transition: 0.3s;
     /* width: 600px; */
     border-radius: 5px;
+    margin: 20px;
 }
 
 .card:hover {
@@ -74,6 +85,8 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
 .card__image {
 border-radius: 5px 5px 0 0;
+padding: 20px;
+max-width: 360px; 
 }
 
 .quotes__container {
@@ -91,6 +104,8 @@ padding: 2px 16px;
 .quote__container {
     padding: 1rem;
 }
+
+
 
 /* .cards__container {
     display: grid;
