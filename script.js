@@ -72,26 +72,9 @@ const noImageAvailable = () => {
 }
 
 //Quotes API
-
-// function fetchProgrammingQuotes(){
-//     return fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
-//     .then(response => {
-//         if (!response.ok) throw new Error(response.status);
-//         return response.json();
-//     })
-//     .then(data => {return data;})
-// }
-      
-
 function showResults (){
     const userInput = document.querySelector("#userInput").value.trim();
     const userInputLower = userInput.toLowerCase()
-    // const nodes = document.querySelectorAll(".card");
-    // const last = nodes[nodes.length - 1];
-
-    // console.log(nodes)
-    // console.log(last)
-
     const quote = document.createElement("h4");
     const author = document.createElement("p");
     const quotesContainer = document.createElement("div");
@@ -125,17 +108,13 @@ function showResults (){
         quotesContainer.appendChild(author); 
         quotesContainer.classList.add("quotes__container");
         
-        
-
-     
-        
     })
     .catch(console.error)
 }
 
 //Event Listeners
 searchButton.addEventListener("click",showImage); //for Harvard Museum API
-// searchButton.addEventListener("click",showResults); //for Quotes API
+//searchButton.addEventListener("click",showResults); //for Quotes API
 
 input.addEventListener('input', evt => {
     const value = input.value;
