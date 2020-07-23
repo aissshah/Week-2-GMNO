@@ -4,14 +4,8 @@
 //  display only those quotes that contain the user input on our page
 
 
-<<<<<<< HEAD
 const searchButton = document.querySelector(".search__btn")
-||||||| fca1e5e
-const searchButton = document.querySelector(".searchBtn")
-=======
-const searchButton = document.querySelector(".searchBtn")
 const input = document.getElementById('userInput')
->>>>>>> ce8f586ca555126b50f8d64bf7739ab9b345ff8a
 
 input.addEventListener('input', evt => {
     const value = input.value;
@@ -33,10 +27,8 @@ function showResults (){
         const quote = document.createElement("h4");
         const author = document.createElement("p");
         const card = document.createElement("section");
-        card.classList.add("card")
         const quotesContainer = document.createElement("div");
-        card.appendChild(quotesContainer);
-        quotesContainer.appendChild(quote, author); 
+        
 
         // const listItem = document.createElement('li');
         // const listText = document.createElement('span');
@@ -62,9 +54,13 @@ function showResults (){
 
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
-           document.body.appendChild(quote);
-           document.body.appendChild(author);
- 
+        
+        document.body.appendChild(card);
+        quotesContainer.appendChild(quote); 
+        quotesContainer.appendChild(author); 
+        quotesContainer.classList.add("quotes__container")
+        card.classList.add("card");
+        card.appendChild(quotesContainer);
 
     });
 }
