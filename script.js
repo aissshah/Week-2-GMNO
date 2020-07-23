@@ -4,12 +4,27 @@
 //  display only those quotes that contain the user input on our page
 
 
+<<<<<<< HEAD
 const searchButton = document.querySelector(".search__btn")
+||||||| fca1e5e
+const searchButton = document.querySelector(".searchBtn")
+=======
+const searchButton = document.querySelector(".searchBtn")
+const input = document.getElementById('userInput')
+>>>>>>> ce8f586ca555126b50f8d64bf7739ab9b345ff8a
 
+input.addEventListener('input', evt => {
+    const value = input.value;
+    if (value) {
+        searchButton.textContent = 'Find me inspiration'
+    } else {
+        searchButton.textContent = 'Surprise me!'
+    }
+})
     
 
 function showResults (){
-    const userInput = document.querySelector("#userInput").value;
+    const userInput = document.querySelector("#userInput").value.trim();
     const userInputLower = userInput.toLowerCase()
 
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
