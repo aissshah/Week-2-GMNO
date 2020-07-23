@@ -5,6 +5,8 @@
 
 
 const searchButton = document.querySelector(".search__btn")
+const mainBody = document.querySelector("main")
+
 const input = document.getElementById('userInput')
 
 input.addEventListener('input', evt => {
@@ -15,6 +17,7 @@ input.addEventListener('input', evt => {
         searchButton.textContent = 'Surprise me!'
     }
 })
+
     
 
 function showResults (){
@@ -44,7 +47,7 @@ function showResults (){
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
         
-        document.body.appendChild(card);
+        mainBody.appendChild(card);
         card.appendChild(art);
         quotesContainer.appendChild(quote); 
         quotesContainer.appendChild(author); 

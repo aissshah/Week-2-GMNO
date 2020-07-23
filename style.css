@@ -1,0 +1,122 @@
+:root {
+    --bg-colour: hsl(225, 81%, 17%);
+    --font-colour: hsl(171, 100%, 72%);
+    --secondary-colour: hsl(179, 44%, 55%);
+    --title-font: 'Rock Salt', cursive;
+    --primary-font:'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-colour);
+    font-family: var(--primary-font);
+    color: var(--font-colour);
+
+}
+header {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+.body__title {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.search__area {
+
+}
+
+.search__bar {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+}
+
+.search__btn {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin-left: 7px;
+}
+
+.search__bar:hover , .search__btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.2rem);
+}
+
+main{
+    display: flex;
+    align-content: center;
+    /* flex-direction:  column; */
+    /* max-width: vw; */
+    /* min-height: 74vh; */
+    margin: 0 auto;
+}
+
+.card {
+    color: black;
+    background-color: hsl(171, 100%, 72%);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* width: 600px; */
+    border-radius: 5px;
+}
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card__image {
+border-radius: 5px 5px 0 0;
+}
+
+.quotes__container {
+padding: 2px 16px;
+}
+
+.cards__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap:  1%;
+    grid-template-areas: "." ".";
+}
+
+.quote__container {
+    padding: 1rem;
+}
+
+/* .cards__container {
+    display: grid;
+    max-width: 800px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-content: space-between;
+    gap:  5%;
+} */
+
+
+footer{
+    z-index: 456789;
+
+}
+
+@media only screen and (min-width: 768px){
+    .cards__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 3% 5% ;
+        grid-template-areas: ". ." ". ." ". .";
+      }
+
+    main {
+        max-width: 80vw;
+    }
+}
