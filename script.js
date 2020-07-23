@@ -12,7 +12,7 @@ const input = document.getElementById('userInput')
 input.addEventListener('input', evt => {
     const value = input.value;
     if (value) {
-        searchButton.textContent = 'Find me inspiration'
+        searchButton.textContent = 'Get inspired'
     } else {
         searchButton.textContent = 'Surprise me!'
     }
