@@ -4,7 +4,7 @@
 //  display only those quotes that contain the user input on our page
 
 
-const searchButton = document.querySelector(".searchBtn")
+const searchButton = document.querySelector(".search__btn")
 
     
 
@@ -15,8 +15,25 @@ function showResults (){
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
     .then(response => {return response.json()})
     .then(data => {
-        const quote = document.createElement("p");
+        const quote = document.createElement("h4");
         const author = document.createElement("p");
+        const card = document.createElement("section");
+        card.classList.add("card")
+        const quotesContainer = document.createElement("div");
+        card.appendChild(quotesContainer);
+        quotesContainer.appendChild(quote, author); 
+
+        // const listItem = document.createElement('li');
+        // const listText = document.createElement('span');
+        // const listButton = document.createElement('button');
+  
+        // listItem.appendChild(listText); 
+        // listText.textContent = myThing;
+        // listItem.appendChild(listButton);
+        // listButton.textContent = 'delete';
+        // list.appendChild(listItem);
+
+
         const quotesWithKeyword = [];
         const authorOfQuoteWithKeyword = []; 
         for (var i = 0; i < data.length; i++){
@@ -32,7 +49,7 @@ function showResults (){
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
            document.body.appendChild(quote);
            document.body.appendChild(author);
-            
+ 
 
     });
 }
