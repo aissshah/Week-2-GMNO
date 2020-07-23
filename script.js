@@ -4,7 +4,7 @@
 //  display only those quotes that contain the user input on our page
 
 
-const searchButton = document.querySelector(".searchBtn")
+const searchButton = document.querySelector(".search__btn")
 const input = document.getElementById('userInput')
 
 input.addEventListener('input', evt => {
@@ -24,8 +24,12 @@ function showResults (){
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
     .then(response => {return response.json()})
     .then(data => {
-        const quote = document.createElement("p");
+        const quote = document.createElement("h4");
         const author = document.createElement("p");
+        const card = document.createElement("section");
+        const quotesContainer = document.createElement("div"); 
+        const art = document.createElement("img");
+
         const quotesWithKeyword = [];
         const authorOfQuoteWithKeyword = []; 
         for (var i = 0; i < data.length; i++){
@@ -39,16 +43,22 @@ function showResults (){
 
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
-           document.body.appendChild(quote);
-           document.body.appendChild(author);
-            
-
+        
+        document.body.appendChild(card);
+        card.appendChild(art);
+        quotesContainer.appendChild(quote); 
+        quotesContainer.appendChild(author); 
+        quotesContainer.classList.add("quotes__container")
+        card.classList.add("card");
+        card.appendChild(quotesContainer);
+        
+        art.src = imageSRC;
     });
 }
 searchButton.addEventListener("click",showResults);
 
 
-
+//add if no quote comes up!
 
     // randomQuote() {
     //     const randomNumber = Math.floor(Math.random() * quotes.length);

@@ -8,7 +8,8 @@ let imageSRC, century, artistName, artworkName;
 let randomNumber;
 let checkLoop = false;
 
-fetch(finalURL)
+function showImage() {
+    fetch(finalURL)
     .then(response => {
         if (!response.ok) {
             throw new Error(response.status)
@@ -21,10 +22,11 @@ fetch(finalURL)
         randomNumber = Math.floor(Math.random() * json.records.length);
         checkIfRecordsAvailable(json);
         checkImageAvailable(json);
-        console.log(century, artworkName, artistName)
-        console.log(imageSRC);
+        // console.log(century, artworkName, artistName)
+        // console.log(imageSRC);
     })
     .catch(console.error)
+}
 
 //to see if no records
 const checkIfRecordsAvailable = data => {
@@ -60,9 +62,8 @@ const checkImageAvailable = data => {
 
 //this function will return when no image is there and manipulate dom saying that. also stop other functions from running?
 const noImageAvailable = () => {
-
+    imageSRC = "resources/option1.png";
 }
 
-
-
+searchButton.addEventListener("click",showImage);
 //stretch: if statements to make the search broader if not specificied
