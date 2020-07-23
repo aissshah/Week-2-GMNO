@@ -30,8 +30,8 @@ function showResults (){
 
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
-            mainBody.appendChild(quote);
-            mainBody.appendChild(author);
+            body.appendChild(quote);
+            body.appendChild(author);
             
 
     });
