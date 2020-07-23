@@ -5,11 +5,20 @@
 
 
 const searchButton = document.querySelector(".searchBtn")
+const input = document.getElementById('userInput')
 
+input.addEventListener('input', evt => {
+    const value = input.value;
+    if (value) {
+        searchButton.textContent = 'Find me inspiration'
+    } else {
+        searchButton.textContent = 'Surprise me!'
+    }
+})
     
 
 function showResults (){
-    const userInput = document.querySelector("#userInput").value;
+    const userInput = document.querySelector("#userInput").value.trim();
     const userInputLower = userInput.toLowerCase()
 
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
