@@ -40,6 +40,7 @@ const checkImageAvailable = data => {
         if (randomNumber >= data.records.length) {
             if (checkLoop) {
                 noImageAvailable();
+                break;
             } else {
                 randomNumber = 0;
                 checkLoop = true;
