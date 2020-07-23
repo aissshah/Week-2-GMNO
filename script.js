@@ -4,10 +4,10 @@
 //  display only those quotes that contain the user input on our page
 
 
-const searchButton = document.querySelector(".searchBtn")
-
+const searchButton = document.querySelector(".search__btn")
+const mainBody = document.querySelector("main")
     
-
+mainBody.appendChild()
 function showResults (){
     const userInput = document.querySelector("#userInput").value;
     const userInputLower = userInput.toLowerCase()
@@ -30,8 +30,8 @@ function showResults (){
 
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
-           document.body.appendChild(quote);
-           document.body.appendChild(author);
+            mainBody.appendChild(quote);
+            mainBody.appendChild(author);
             
 
     });
