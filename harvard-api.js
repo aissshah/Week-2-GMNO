@@ -1,9 +1,9 @@
 //initialising variables
 const startURL = "https://api.harvardartmuseums.org/object";
-const apiKey = "?apikey=664fe862-4dac-4184-8c4a-3aa1620d459c";
+const apiKey = ourKey.harvardKey;
 let title = "fire";
 let classification = "Paintings";
-let finalURL = startURL + apiKey + "&title=" + title + "&classification=" + classification;
+let finalURL = startURL + apiKey + "&title=" + title + "&classification=" + classification + "&size=100";
 let imageSRC, century, artistName, artworkName;
 let randomNumber;
 let checkLoop = false;
@@ -17,7 +17,7 @@ fetch(finalURL)
     })
     .then(json => {
         console.log(json);
-        
+
         randomNumber = Math.floor(Math.random() * json.records.length);
         checkIfRecordsAvailable(json);
         checkImageAvailable(json);
@@ -63,7 +63,5 @@ const noImageAvailable = () => {
 }
 
 
-//how to hide API key
-//apikey=664fe862-4dac-4184-8c4a-3aa1620d459c&title=rabbit&classification=Paintings
-//list of different classifications
+
 //stretch: if statements to make the search broader if not specificied
