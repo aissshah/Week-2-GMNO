@@ -1,6 +1,6 @@
 //initialising variables
 const startURL = "https://api.harvardartmuseums.org/object";
-const apiKey = ourKey.harvardKey;
+const apiKey = ourKey;
 let title = "fire";
 let classification = "Paintings";
 let finalURL = startURL + apiKey + "&title=" + title + "&classification=" + classification + "&size=100";

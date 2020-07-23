@@ -3,13 +3,23 @@
 // check if that input appears in any of the quotes
 //  display only those quotes that contain the user input on our page
 
-
 const searchButton = document.querySelector(".search__btn")
 const mainBody = document.querySelector("main")
+const input = document.getElementById('userInput')
+
+input.addEventListener('input', evt => {
+    const value = input.value;
+    if (value) {
+        searchButton.textContent = 'Find me inspiration'
+    } else {
+        searchButton.textContent = 'Surprise me!'
+    }
+})
+
     
 mainBody.appendChild()
 function showResults (){
-    const userInput = document.querySelector("#userInput").value;
+    const userInput = document.querySelector("#userInput").value.trim();
     const userInputLower = userInput.toLowerCase()
 
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
