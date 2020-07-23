@@ -27,19 +27,8 @@ function showResults (){
         const quote = document.createElement("h4");
         const author = document.createElement("p");
         const card = document.createElement("section");
-        const quotesContainer = document.createElement("div");
-        
-
-        // const listItem = document.createElement('li');
-        // const listText = document.createElement('span');
-        // const listButton = document.createElement('button');
-  
-        // listItem.appendChild(listText); 
-        // listText.textContent = myThing;
-        // listItem.appendChild(listButton);
-        // listButton.textContent = 'delete';
-        // list.appendChild(listItem);
-
+        const quotesContainer = document.createElement("div"); 
+        const art = document.createElement("img");
 
         const quotesWithKeyword = [];
         const authorOfQuoteWithKeyword = []; 
@@ -56,18 +45,20 @@ function showResults (){
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
         
         document.body.appendChild(card);
+        card.appendChild(art);
         quotesContainer.appendChild(quote); 
         quotesContainer.appendChild(author); 
         quotesContainer.classList.add("quotes__container")
         card.classList.add("card");
         card.appendChild(quotesContainer);
-
+        
+        art.src = imageSRC;
     });
 }
 searchButton.addEventListener("click",showResults);
 
 
-
+//add if no quote comes up!
 
     // randomQuote() {
     //     const randomNumber = Math.floor(Math.random() * quotes.length);
