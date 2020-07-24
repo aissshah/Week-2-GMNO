@@ -1,74 +1,62 @@
-# Week-2-GMNO - Art of Code 
-Our project this week is to build an app that queries at least two APIs and uses the results to update the DOM. There should be a way for the user to search, filter, sort or otherwise affect what is displayed.
+# ART OF CODE
+Art of code is an essential website for anyone with a passion for programming and art.
+Navigate through our easy-to-use website for your daily dose of coding inspiration. 
 
-What you choose to build and how you choose to display the data is entirely up to you!
+The app  queries two APIs and uses the results to update the DOM. The user can search, filter the content to affect what is displayed. 
+
+
+## How it works:
+Users will either type in an input and search or generate random results  
+If user inputs something then a programming quote with the users input will be displayed , otherwise the quotes will be generated randomly  
+Results will be displayed in card-form => which include art images and quotes beneath them
+  
 
 ## User Stories
-A user story is a description of one or more features of a piece of software.
+> A user story is a description of one or more features of a piece of software.
 
-## Core Stories
-As a user, I want to:
+### Accomplished user stories:  
+### As a user :  
 
-- See an interesting mashup of different data
-
-- Input information to change the displayed result
-
-- View the app on all of my devices
-
-- Since your app will be unique you will need to create your own user stories for more specific features.
+- I can get random results or search for particular ones
+- I can view the app on all of my devices
+- I can see the results from both APIs displayed in one card
+- I can use the keyboard to navigate through the entire website
+- I am automatically scrolled to the section of the page where the results have been displayed
 
 ## Stretch stories
 - As an impatient user, I want to see some indication that data is loading
-
 - As a confused user, I want to be told when something goes wrong
 
-## Acceptance Criteria
-- Query at least two APIs using fetch
+## Accomplishments :
+### UX/UI :
+- The app has unique user interface features like:
+    - Card light up on hover
+    - The search bar lights up on hover
+    - The user is automatically scrolled to the section where the new card has been displayed
+- The team have used BEM methodology to name their selectors
+- The webapp is accessible to all users
+- The website can be viewed easily on all devices
 
-- Dynamic content generated with JS
+### Deployment
+- The app is hosted on [Nelify](https://www.netlify.com/)    
 
-- A clearly defined user journey, documented in your readme
-
-- A responsive, mobile-first design
-
-- Ensure your app is accessible to as many different users as possible
-
-- Try not to push API keys up to GitHub (since anyone can see them there)
-
-## Planning
-- During the planning phase we suggest you spend time on:
-
-- Exploring APIs you are interested in working with
-
-- Considering your user journey
-
-- Deciding what you need to build for your Minimum Viable Product (MVP) and splitting up the tasks
-
-## Choosing your APIs
-Things to check before you start:
-- Does it support CORS (cross-origin requests)?
-
-- Is there a high enough rate limit?
-
-- Is a free API key available?
-
-- Are you able to use the API without user authentication (oAuth)?
-
-- Is good documentation available?
+### API
+- The two APIs used were:
+    - [Programming quotes](https://programming-quotes-api.herokuapp.com/)
+    - [Harvard arts API](https://www.harvardartmuseums.org/collections/api)
 
 
-## Team rules
-- Pair swapping after each task/issue is completed
-- each pair should make sure they understand what each pair is doing 
+## Challenges:
+1. First card was displayed without an image
 
-## Design 
-- we should use bem methodology
-- cards will expand/zoom in when hovered over
+![](images/challenge-image.png)  
 
-## How it works:
-- User will be asked how much they want to be inspired
-- Depending on answer we will display images with quotes within that ratings range
-- Results will be displayed in card-form => which include art images and quotes beneath them
+### Solution :
+This occured because the the function that was fetching the results from the images API ran before the one displaying results  
+To fix this we ran the quotes and results-displaying function within the Images API function
 
-## Bonus
-- Use drag and drop API to effectively move the cards that the user likes into a different folder/page
+## Team
+- [Jihyun](https://github.com/Jihyun-Jang) - Scrum Master
+- [Trish](https://github.com/trishtracking) - Quality Control Specialist
+- [Aishah](https://github.com/aissshah) - Deployment Specialist
+- [Khadija](https://github.com/khadija-nur) - Design Specialist
