@@ -87,6 +87,7 @@ function showResults (){
     const art = document.createElement("img");
     const card = document.createElement("section");
     art.src = imageSRC;
+    art.alt = artworkName + " by " + artistName;
         
 
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
