@@ -81,6 +81,7 @@ function showResults (){
     const art = document.createElement("img");
     const card = document.createElement("section");
     art.src = imageSRC;
+    art.alt = artworkName + " by " + artistName;
         
 
     fetch("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
@@ -107,6 +108,8 @@ function showResults (){
         quotesContainer.appendChild(quote); 
         quotesContainer.appendChild(author); 
         quotesContainer.classList.add("quotes__container");
+
+        card.scrollIntoView();
         
     })
     .catch(console.error)

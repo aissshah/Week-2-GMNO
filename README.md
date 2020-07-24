@@ -1,4 +1,4 @@
-# Art Of Code (url : https://art-of-code.netlify.app/)
+# ART OF CODE
 Art of code is an essential website for anyone with a passion for programming and art.
 Navigate through our easy-to-use website for your daily dose of coding inspiration. 
 
