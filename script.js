@@ -138,3 +138,9 @@ input.addEventListener("input", evt => {
         searchButton.textContent = "Surprise me!"
     }
 });
+
+//reload page when clicking logo
+
+document.querySelector("h1").addEventListener("click", () => {
+    window.location.reload();
+})
