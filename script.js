@@ -127,11 +127,16 @@ function showResults (){
 }
 
 //Event Listeners
-searchButton.addEventListener("click",showImage); //for Harvard Museum API
+
+searchButton.addEventListener("click", event => {
+    event.preventDefault();
+    showImage()
+
+}); //for Harvard Museum API
+
 clearButton.addEventListener('click', function() {
     window.location.reload();
 });
-//searchButton.addEventListener("click",showResults); //for Quotes API
 
 input.addEventListener("input", evt => {
     const value = input.value;
@@ -142,3 +147,7 @@ input.addEventListener("input", evt => {
     }
 });
 
+
+document.querySelector("h1").addEventListener("click", () => {
+    window.location.reload();
+})
