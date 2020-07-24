@@ -1,17 +1,20 @@
 //initialising global variables
+
 const startURL = "https://api.harvardartmuseums.org/object";
 const apiKey = "?apikey=664fe862-4dac-4184-8c4a-3aa1620d459c";
 let title = "flowers";
 let classification = "Paintings";
-let finalURL = startURL + apiKey + "&title=" + title + "&classification=" + classification + "&size=100";
+let finalURL = startURL + apiKey + "&title=" + title + 
+"&classification=" + classification + "&size=100";
 let imageSRC, century, artistName, artworkName;
 let randomNumber;
 let checkLoop = false;
 const searchButton = document.querySelector(".search__btn")
 const mainBody = document.querySelector("main")
-const input = document.getElementById('userInput')
+const input = document.getElementById("userInput")
 
 //Harvard API functions
+
 function showImage() {
     fetch(finalURL)
     .then(response => {
@@ -21,15 +24,11 @@ function showImage() {
         return response.json()
     })
     .then(json => {
-        // console.log(json);
         randomNumber = Math.floor(Math.random() * json.records.length);
         checkIfRecordsAvailable(json);
         checkImageAvailable(json);
         
-        console.log(imageSRC)
-
         showResults();
-
     })
     .catch(console.error)
 }
@@ -41,7 +40,8 @@ const checkIfRecordsAvailable = data => {
     }
 }
 
-//This checks if image is available for that object and if not goes to the next object in array
+//This checks if image is available for that object and 
+//if not goes to the next object in array
 const checkImageAvailable = data => {
     while(!data.records[randomNumber].primaryimageurl){
         randomNumber++;
@@ -101,19 +101,24 @@ function showResults (){
             }
         } 
         const randomQuoteNumber = Math.floor(Math.random() * quotesWithKeyword.length);
-        // console.log(quotesWithKeyword[randomQuoteNumber])
 
         quote.textContent = quotesWithKeyword[randomQuoteNumber];
         author.textContent = authorOfQuoteWithKeyword[randomQuoteNumber];
         
-        mainBody.appendChild(card);
-        card.appendChild(art);
-        card.classList.add("card")
-        card.appendChild(quotesContainer);
-        quotesContainer.appendChild(quote); 
-        quotesContainer.appendChild(author); 
-        quotesContainer.classList.add("quotes__container");
-        
+        if (!quotesWithKeyword.length) {
+            let noPic = document.createElement("img");
+            noPic.classList.add("nopic");
+            mainBody.appendChild(noPic);
+            noPic.src = "resources/option1.png";
+        } else {
+            mainBody.appendChild(card);
+            card.appendChild(art);
+            card.classList.add("card")
+            card.appendChild(quotesContainer);
+            quotesContainer.appendChild(quote); 
+            quotesContainer.appendChild(author); 
+            quotesContainer.classList.add("quotes__container");
+        }
     })
     .catch(console.error)
 }
@@ -122,11 +127,11 @@ function showResults (){
 searchButton.addEventListener("click",showImage); //for Harvard Museum API
 //searchButton.addEventListener("click",showResults); //for Quotes API
 
-input.addEventListener('input', evt => {
+input.addEventListener("input", evt => {
     const value = input.value;
     if (value) {
-        searchButton.textContent = 'Find me inspiration'
+        searchButton.textContent = "Find me inspiration"
     } else {
-        searchButton.textContent = 'Surprise me!'
+        searchButton.textContent = "Surprise me!"
     }
-}); 
+});
