@@ -1,7 +1,7 @@
 //initialising global variables
 
 const startURL = "https://api.harvardartmuseums.org/object";
-const apiKey = "?apikey=664fe862-4dac-4184-8c4a-3aa1620d459c";
+const apiKey = "?apikey=664fe862-4dac-4184-8c4a-3aa1620d459c";  
 let title = "flowers";
 let classification = "Paintings";
 let finalURL = startURL + apiKey + "&title=" + title + 
@@ -12,6 +12,8 @@ let checkLoop = false;
 const searchButton = document.querySelector(".search__btn")
 const mainBody = document.querySelector("main")
 const input = document.getElementById("userInput")
+
+const clearButton = document.querySelector("#clearBtn");
 
 //Harvard API functions
 
@@ -126,6 +128,9 @@ function showResults (){
 
 //Event Listeners
 searchButton.addEventListener("click",showImage); //for Harvard Museum API
+clearButton.addEventListener('click', function() {
+    window.location.reload();
+});
 //searchButton.addEventListener("click",showResults); //for Quotes API
 
 input.addEventListener("input", evt => {
@@ -136,3 +141,4 @@ input.addEventListener("input", evt => {
         searchButton.textContent = "Surprise me!"
     }
 });
+

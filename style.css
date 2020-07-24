@@ -44,6 +44,20 @@ header {
     margin-top: 3rem;
 }
 
+.clear__button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    font-size: 1.2rem;
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
+}
+
+.clear__button:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 var(--hover-colour);
+    transform: translateY(-0.2rem);
+}
+
 .body__title {
     font-family: var(--title-font);
     font-size: 3rem;
@@ -54,12 +68,16 @@ header {
     font-size: 1.2rem;
     padding: 10px 15px;
     margin-bottom: 30px;
+    border-radius: 2rem;
+
 }
 
 .search__btn {
     font-size: 1.2rem;
     padding: 10px 15px;
     margin-left: 7px;
+    border-radius: 2rem;
+
 }
 
 .search__bar:hover , .search__btn:hover {
@@ -87,12 +105,11 @@ main {
 }
 
 .card:hover {
-box-shadow: 0 8px 16px 0 var(--shadow-colour);
+    box-shadow: 0 8px 16px 0 var(--shadow-colour);
 }
 
 .search__area {
-    text-align: center;
-    
+    text-align: center;  
 }
 
 @media only screen and (min-width: 768px){

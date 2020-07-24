@@ -10,14 +10,18 @@
     <script src="script.js" defer></script>
     <title>Art of Code</title>
 </head>
+
 <body>
     <header>
         <h1 class="body__title">Art of Code</h1> 
 
         <form class="search__area" role="search">
-            <input label = "search" type="text" id="userInput"  class="search__bar" role="searchbox" placeholder="Find me quotes on...">
+            <label for="userInput"></label>
+            <input type="text" id="userInput"  class="search__bar" role="searchbox" placeholder="Find me quotes on...">
             <button type = "button" class="search__btn">Surprise Me!</button> 
-        </form>     
+        </form> 
+        
+        <button id="clearBtn" class= "clear__button">clear</button>
 
     </header>
     <main>       
@@ -29,12 +33,6 @@
     </footer>
 </body>
 
+
+
 </html>
-<!-- <input type="radio" id="male" name="gender" value="male">
-<label for="male">Male</label><br>
-
-<input type="radio" id="female" name="gender" value="female">
-<label for="female">Female</label><br>
-
-<input type="radio" id="other" name="gender" value="other">
-<label for="other">Other</label> -->
