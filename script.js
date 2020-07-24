@@ -41,7 +41,7 @@ const checkIfRecordsAvailable = data => {
     }
 }
 
-//another option is to start the loop from 0 but then loop might run forever
+//This checks if image is available for that object and if not goes to the next object in array
 const checkImageAvailable = data => {
     while(!data.records[randomNumber].primaryimageurl){
         randomNumber++;
@@ -57,7 +57,13 @@ const checkImageAvailable = data => {
     }
     imageSRC = data.records[randomNumber].primaryimageurl;
     artworkName = data.records[randomNumber].title;
+
     century = data.records[randomNumber].century;
+    if (data.records[randomNumber].century) {
+        century = data.records[randomNumber].century;
+    } else {
+        century = "Unknown";
+    }
 
     if (data.records[randomNumber].peoplecount !== 0) {
         artistName = data.records[randomNumber].people[0].name;
@@ -66,7 +72,7 @@ const checkImageAvailable = data => {
     }
 }
 
-//this function will return when no image is there and manipulate dom saying that. also stop other functions from running?
+//this function will return when no image is available from dataset
 const noImageAvailable = () => {
     imageSRC = "resources/option1.png";
 }
