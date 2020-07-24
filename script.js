@@ -1,7 +1,7 @@
 //initialising global variables
 
 const startURL = "https://api.harvardartmuseums.org/object";
-const apiKey = process.env.ourKey;  
+const apiKey = "?apikey=664fe862-4dac-4184-8c4a-3aa1620d459c";  
 let title = "flowers";
 let classification = "Paintings";
 let finalURL = startURL + apiKey + "&title=" + title + 
