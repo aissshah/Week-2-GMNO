@@ -125,8 +125,10 @@ function showResults (){
 }
 
 //Event Listeners
-searchButton.addEventListener("click",showImage); //for Harvard Museum API
-//searchButton.addEventListener("click",showResults); //for Quotes API
+searchButton.addEventListener("click", event => {
+    event.preventDefault();
+    showImage()
+}); //for Harvard Museum API
 
 input.addEventListener("input", evt => {
     const value = input.value;
@@ -136,3 +138,9 @@ input.addEventListener("input", evt => {
         searchButton.textContent = "Surprise me!"
     }
 });
+
+//reload page when clicking logo
+
+document.querySelector("h1").addEventListener("click", () => {
+    window.location.reload();
+})

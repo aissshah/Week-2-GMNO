@@ -24,6 +24,7 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover; 
+    max-height: 45vh;
 }
 h4, p {
     font-size: 1.3rem; 
@@ -112,6 +113,8 @@ box-shadow: 0 8px 16px 0 var(--shadow-colour);
 
     .nopic {
         width: 40vw;
+        height: auto;
+        margin: 1rem;
     }
 
     .body__title {
